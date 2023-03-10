@@ -12,13 +12,13 @@ export default class Renderer {
         this.setRenderer();
     }
 
-    setRenderer(){
-        this.Renderer = new THREE.WebGL1Renderer({
+    setRenderer() {
+        this.renderer = new THREE.WebGLRenderer({
             canvas: this.canvas,
             antialias: true,
         });
 
-        this.renderer.physicallyCorrectLights = true;
+        this.renderer.useLegacyLights = true;
         this.renderer.outputEncoding = THREE.sRGBEncoding;
         this.renderer.toneMapping = THREE.CineonToneMapping;
         this.renderer.toneMappingExposure = 1.75;

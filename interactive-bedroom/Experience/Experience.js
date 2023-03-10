@@ -1,6 +1,7 @@
 import * as THREE from "three";
 
 import Sizes from "./Utils/Sizes.js";
+import Time from "./Utils/Time.js";
 import Camera from "./Camera.js";
 import Renderer from "./Renderer.js";
 
@@ -15,7 +16,28 @@ export default class Experience{
 		Experience.instance = this
 		this.canvas = canvas;
 		this.scene = new THREE.Scene();
+		this.time = new Time();
 		this.sizes = new Sizes();
 		this.camera = new Camera();
-		this.Renderer = new Renderer();
-}}
+		this.renderer = new Renderer();
+
+		this.sizes.on("resize", () => {
+			this.resize();
+		});
+
+        this.time.on("update", () => {
+            this.update();
+        });
+}
+
+resize(){
+	this.camera.update();
+	this.renderer.update();
+
+}
+	update(){
+		this.camera.update();
+		this.renderer.update();
+
+	}
+}
