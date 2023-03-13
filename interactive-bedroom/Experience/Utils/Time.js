@@ -11,6 +11,7 @@ export default class Time extends EventEmitter {
         this.update();
     }
 
+    //on update excute update
     update() {
         const currentTime = Date.now();
         this.delta = currentTime - this.current;
