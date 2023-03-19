@@ -2,10 +2,8 @@ import * as THREE from "three";
 import Experience from "../Experience/Experience";
 
 import Room from "./Room.js";
-// import Floor from "./Floor.js";
-//import Controls from "./Controls.js";
+// import Controls from "./Controls.js";
 import Environment from "./Enviroment";
-
 import { EventEmitter } from "events";
 
 export default class World extends EventEmitter {
@@ -17,14 +15,14 @@ export default class World extends EventEmitter {
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
-        //this.theme = this.experience.theme;
+        this.theme = this.experience.theme;
 
         this.resources.on("ready", () => {
-             this.environment = new Environment();
-        //     this.floor = new Floor();
-             this.room = new Room();
-        //     // this.controls = new Controls();
-        //     this.emit("worldready");
+            this.environment = new Environment();
+            // this.floor = new Floor();
+            this.room = new Room();
+            // this.controls = new Controls();
+            // this.emit("worldready");
         });
 
         // this.theme.on("switch", (theme) => {

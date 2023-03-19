@@ -12,6 +12,7 @@ import Experience from "../Experience/Experience.js";
         }
 
     setSunlight() {
+        this.scene.background = new THREE.Color( 0xd4eefa );
         this.sunLight = new THREE.DirectionalLight("#ffffff", 3);
         this.sunLight.castShadow = true;
         this.sunLight.shadow.camera.far = 20;
