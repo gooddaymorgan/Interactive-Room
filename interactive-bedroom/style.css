@@ -1,10 +1,43 @@
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
+}
+
+nav {
+  display: flex; 
+  justify-content: space-between; 
+  padding:20px;
+  background-color: #d4eefa;
+  padding-left: 40px;
+}
+
+nav > a , div {
+    color: #4361ee;
+    font-weight: 600;
+}
+
+.navSection > a {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.navSection:last-child{
+  padding-right: 40px;
+}
+
+.buttonToggleSection {
+  background-color: #d4eefa;
+  display: flex;
+  justify-content: right;
+  padding-top: 30px;
+}
+
+.buttonToggle {
+  margin-right:10%;
+  padding: 20px;
 }
 
 .experience{
@@ -26,24 +59,90 @@
   position: absolute;
 	text-align: center;
 	z-index: 100;
-
-  display: flex;
-  justify-content: space-between;
-  margin: 15%;
-  background-color: antiquewhite;
+  margin: 10%;
 }
 
 .header1 {
   font-size: 4rem;
-  text-shadow: 5px 5px 5px rgb(87, 25, 95);
+  color: #4cc9f0;
+  text-shadow: 0 4px #4361ee;
+  margin-bottom: 20px;
+}
+
+.header2 {
+  font-size: 4rem;
+  color: #4cc9f0;
+  text-shadow: 0 4px #4361ee;
 }
 
 .headerButton {
   background-color: rgba(255, 255, 255, 0);
-  border: 2px solid white;
+  border: 2px solid #4361ee;
   padding: 15px;
   border-radius: 15px;
-  color: white;
-  box-shadow: ;
-  margin: 20px;
+  color: #4361ee;
+  box-shadow: 0 3px #4361ee; ;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.headerButton:hover {
+  box-shadow: 0 5px 16px 0 #4361ee;
+  transition: box-shadow 0.5s;
+}
+
+.headerButton:active {
+  background-color: white;
+  box-shadow: 0 5px 16px 0 #4361ee;
+  transition: box-shadow 0.5s;
+}
+
+.subtitle {
+  color: #4361ee;
+}
+
+/* ARROW */
+
+.arrow-box {
+  margin-top: 30px;
+}
+.arrow {
+  border: solid #4361ee;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.bounce {
+  animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+}
+
+/* TRANSITON */
+
+@keyframes wipe-in-right {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:right"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-right both;
 }
