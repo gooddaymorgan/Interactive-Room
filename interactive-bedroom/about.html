@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Morgan Day</title>
+  <meta name="description" content="Web Developer Portfolio" />
+  <meta name="keywords" content="Web Design, Digital Designer, Portfolio, Morgan, Day,">
+  <meta name="author" content="Morgan Day">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./imgs.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+    crossorigin="anonymous"></script>
+
+  <title>Morgan Day</title>
+</head>
+
+<body class="wave-background">
+
+  <nav class="topnav" id="myTopnav">
+    <a href="index.html">Morgan Day Portfolio</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="code.html">My Work</a>
+    <a href="javascript:void(0);" class="icon" onclick="navbar()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </nav>
+
+
+  <container>
+    <div class="d-flex justify-content-center text-center mt-5 animate__animated animate__fadeInDown about-responsive">
+      <div class="col-lg-6 col-sm-8 col-xs-8 col-md-8 col-xl-6 p-5 mt-5 cardLarge text-dark">
+
+        <!--Picture-->
+        <div class="avatar my-5 "></div>
+
+        <!--Social Links-->
+        <div class="m-4">
+          <a class="btn btn-light btn-floating rounded-circle m-2" target="_blank"
+            href="https://www.linkedin.com/in/morgan-day-design/?originalSubdomain=ca" role="button"><i
+              class="fab fa-linkedin-in"></i></a>
+          <a class="btn btn-light btn-floating rounded-circle m-2" target="_blank"
+            href="https://github.com/gooddaymorgan" role="button"><i class="fab fa-github"></i></a>
+          <a class="btn btn-light btn-floating rounded-circle m-2" target="_blank"
+            href="https://twitter.com/daymorgandesign" role="button"><i class="fab fa-twitter"></i></a>
+        </div>
+
+        <h1 class="my-3">About Me</h1>
+        <p>
+          Hi there! My name is Morgan! I'm a student at SaskpolyTech's
+          Interactive Design & Technology program. I'm expected to graduated in June of 2023, and I'm currently seeking
+          work experience,
+          so I can further my career as front-end developer!
+        </p>
+        <p>
+          Some things to know about me- is that I have a background in both design & development.
+          I started off my first year studying design at my program, but I eventually fell in love with code and decided
+          to pursue it as my career. I like to consider myself to be a creative person who likes to engage both
+          my left and right brain!
+        </p>
+
+        <p>
+          When I'm not working, you can usually catch me drinking excessive amounts of ice coffee and hanging out with
+          my cats: Luna and Thumper.
+        </p>
+
+        <h3 class="mt-5">About My Program</h3>
+        <p>The program (IDT) focuses primarly on teaching students hand-on learning experiences. Students are taught
+          both
+          code and design in the first year, and then they are split off in the second year into thier own
+          "concentration".
+          During my time, I've learned skills in JavaScript development, design, and animation.
+        </p>
+
+        <h3 class="mt-5">Contact</h3>
+        <p>morgan.eleanor.day@gmail.com</p>
+
+        <hr class="my-5">
+
+        <h3 class="m-4">Languages & Frameworks</h3>
+
+        <p>
+          JavaScript <br>
+          HTML5 <br>
+          CSS & SCSS <br>
+          BootStrap <br>
+          REACT & REACT NATIVE <br>
+          MySQL <br>
+          Three.js <br>
+          Wordpress <br>
+        </p>
+
+        <h3 class="m-4">Software</h3>
+
+        <p>
+          Adobe Creative Suite <br>
+          Blender <br>
+          PhpMyAdmin<br>
+          Microsoft Office & Google Workspace<br>
+          Github<br>
+          Trello<br>
+        </p>
+
+        <h3 class="m-4">Other Skills</h3>
+
+        <p>
+          Software Engine Optimization (SEO)<br>
+          AGILE Development<br>
+          Mobile Application Development & Design<br>
+          User Interface (UI)<br>
+          User Experience (UX)<br>
+        </p>
+      </div>
+    </div>
+  </container>
+
+  <footer class="mt-5 text-center text-dark">
+    <p>- Morgan Day Copyright 2023 -</p>
+  </footer>
+
+  <script>
+    function navbar() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+</body>
+</html>

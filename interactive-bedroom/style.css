@@ -1,3 +1,4 @@
+@import "transition-style";
 
 * {
   margin: 0;
@@ -6,27 +7,57 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-nav {
-  display: flex; 
-  justify-content: space-between; 
-  padding:20px;
+body {
   background-color: #d4eefa;
-  padding-left: 40px;
 }
 
-nav > a , div {
-    color: #4361ee;
-    font-weight: 600;
+.topnav {
+  background-color: #d4eefa;
+  overflow: hidden;
+  margin-bottom: 30px;
 }
 
-.navSection > a {
-  padding-left: 20px;
-  padding-right: 20px;
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: #4361ee;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
-.navSection:last-child{
-  padding-right: 40px;
+/* Change the color of links on hover */
+.topnav a:hover {
+  color: white;
+  text-shadow: 0px 1px 2px #4361ee;
+  transition: text-shadow 0.5s;
 }
+
+/* Add an active class to highlight the current page */
+.topnav a.active {
+  color: #4361ee;
+  text-shadow: 0 1px 2px #4361ee;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.topnav .icon {
+  display: none;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+
+h3 {
+  font-size: 2.5rem;
+  margin-top: 20px;
+
+}
+
 
 .buttonToggleSection {
   background-color: #d4eefa;
@@ -36,31 +67,16 @@ nav > a , div {
 }
 
 .buttonToggle {
-  margin-right:10%;
+  margin-right: 10%;
   padding: 20px;
 }
 
-.experience{
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-}
 
-.experience-canvas{
-  width: 100%;
-  height: 100%;
-}
 
-.hidden{
+.hidden {
   display: none;
 }
 
-#info {
-  position: absolute;
-	text-align: center;
-	z-index: 100;
-  margin: 10%;
-}
 
 .header1 {
   font-size: 4rem;
@@ -81,7 +97,8 @@ nav > a , div {
   padding: 15px;
   border-radius: 15px;
   color: #4361ee;
-  box-shadow: 0 3px #4361ee; ;
+  box-shadow: 0 3px #4361ee;
+  ;
   margin-top: 40px;
   margin-bottom: 30px;
   font-weight: 700;
@@ -102,11 +119,29 @@ nav > a , div {
   color: #4361ee;
 }
 
+
+/* TRANSITON */
+
+@keyframes wipe-in-up {
+  from {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:wipe:up"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-up both;
+}
+
 /* ARROW */
 
 .arrow-box {
   margin-top: 30px;
 }
+
 .arrow {
   border: solid #4361ee;
   border-width: 0 3px 3px 0;
@@ -122,27 +157,239 @@ nav > a , div {
 .bounce {
   animation: bounce 2s ease infinite;
 }
+
 @keyframes bounce {
-    70% { transform:translateY(0%); }
-    80% { transform:translateY(-15%); }
-    90% { transform:translateY(0%); }
-    95% { transform:translateY(-7%); }
-    97% { transform:translateY(0%); }
-    99% { transform:translateY(-3%); }
-    100% { transform:translateY(0); }
-}
-
-/* TRANSITON */
-
-@keyframes wipe-in-right {
-  from {
-    clip-path: inset(0 100% 0 0);
+  70% {
+    transform: translateY(0%);
   }
-  to {
-    clip-path: inset(0 0 0 0);
+
+  80% {
+    transform: translateY(-15%);
+  }
+
+  90% {
+    transform: translateY(0%);
+  }
+
+  95% {
+    transform: translateY(-7%);
+  }
+
+  97% {
+    transform: translateY(0%);
+  }
+
+  99% {
+    transform: translateY(-3%);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }
 
-[transition-style="in:wipe:right"] {
-  animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-right both;
+
+/* #info {
+  position: absolute;
+  text-align: center;
+  z-index: 100;
+  margin: 10%;
+} */
+
+.experience {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 }
+
+.experience-canvas {
+  width: 100%;
+  height: 100%;
+} 
+
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 1700px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  #info {
+    position:static;
+    display: block;
+    text-align: center;
+    z-index: 100;
+    margin: 10%;
+  }
+}
+
+/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+@media screen and (max-width: 1700px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1701px) {
+
+  #info {
+  position: absolute;
+  text-align: center;
+  z-index: 100;
+  margin: 10%;
+}
+
+}
+
+/* SIDE PAGES */
+
+/* Custom CSS */
+.wave-background {
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(315deg, #4361ee, rgba(60,132,206,1) 38%, #4cc9f0, #7453c4 );
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+p {
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+h2 {
+  color: white;
+}
+
+h3 {
+  color: white;
+}
+
+hr {
+  background-color: white;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background: rgb(255 255 255 / 25%);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+      transform: translateX(1);
+  }
+
+  25% {
+      transform: translateX(-25%);
+  }
+
+  50% {
+      transform: translateX(-50%);
+  }
+
+  75% {
+      transform: translateX(-25%);
+  }
+
+  100% {
+      transform: translateX(1);
+  }
+}
+
+ /* Small devices (landscape phones, 576px and up) */
+/* @media (min-width: 576px) {
+
+  #info {
+    position:fixed;
+    display: block;
+    text-align: center;
+    z-index: 100;
+    margin: 10%;
+  }
+
+} */
+
+/* @Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) {
+  #info {
+    position:fixed;
+    display: block;
+    text-align: center;
+    z-index: 100;
+    margin: 10%;
+  }
+} */
+
+/* Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  } 
+}*/
+
+
+/* X-Large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) {
+
+} */
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+/* @media (min-width: 1400px) {
+
+} */

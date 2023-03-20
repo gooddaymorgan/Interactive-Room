@@ -1,50 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
+<head>
 
-    <nav id="nav">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Morgan Day</title>
+  <meta name="description" content="Web Developer Portfolio" />
+  <meta name="keywords" content="Web Design, Digital Designer, Portfolio, Morgan, Day,">
+  <meta name="author" content="Morgan Day">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Morgan Day</title>
+</head>
+
+<body>
+
+
+  <nav class="topnav" id="myTopnav">
+    <a href="index.html">Morgan Day Portfolio</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="code.html">My Work</a>
+    <a href="javascript:void(0);" class="icon" onclick="navbar()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </nav>
+
+    <!-- <nav id="nav">
 
       <a><span style="font-weight: 800;">Morgan Day's</span> Portfolio</a>
 
       <div class="navSection">
-      <a>Home</a>
-      <a>About</a>
-      <a>My Work</a>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">My Work</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
       </div>
-    </nav>
 
-    <section class="buttonToggleSection">
-      <button class="buttonToggle">Turn Off / On</button>
-    </section>
+    </nav> -->
+
+    <div id="info">
+
+      <div>
+        <h1 class="header1 animate__animated animate__bounceInLeft">Morgan Day</h1>
+        <h2 class="subtitle animate__animated animate__bounceInRight">Front-End Developer | Student | 2023</h2>
+        <h3 class="subtitle animate__animated animate__bounceInRight">Life's A Beach</h3>
+        <button class="headerButton animate__animated animate__bounceInUp">Learn More</button>
+
+          <div class="subtitle arrow-box bounce animate__animated animate__bounceInUp">
+            <p>P.S. You can Rotate Me <i class="arrow right"></i></p>
+          </div>
+
+      </div>
+    </div>
 
     <div class="experience">
       <canvas class="experience-canvas"></canvas>
     </div>
 
-    <div id="info">
 
-        <div>
-          <h1 class="header1 animate__animated animate__bounceInLeft" >Morgan Day</h1>
-          <h2 class="subtitle">Front-End Developer | Student | 2023</h2>
-          <button class="headerButton">Learn More</button>
 
-          <div class="subtitle arrow-box bounce">
-            <p>P.s. You can Rotate Me <i class="arrow right"></i></p>
-          </div>
-        </div>
-    </div>
-
-    
-    <script type="module" src="/main.js"></script>
-  </body>
+  <script type="module" src="/main.js"></script>
+  <script>
+    function navbar() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    </script>
+</body>
 </html>
